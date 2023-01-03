@@ -8,6 +8,9 @@ using Stride.Core.Serialization.Contents;
 using Stride.Core.Serialization.Serializers;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Toolchains.InProcess.NoEmit;
 
 namespace Bench.Serialization;
 
@@ -52,14 +55,28 @@ public class PersonSerializer : DataSerializer<Person>
     }
 }
 
+
+public class AntiVirusFriendlyConfig : ManualConfig
+{
+    public AntiVirusFriendlyConfig()
+    {
+        AddJob(Job.MediumRun
+            .WithToolchain(InProcessNoEmitToolchain.Instance));
+    }
+}
+
+[Config(typeof(AntiVirusFriendlyConfig))]
 public class SeriBench
 {
     Person p = new Person("John", "Doe", 35);
     PersonSerializer ps = new();
-    BinarySerializationWriter stream = new(new MemoryStream());
+    
+    [Benchmark]
+    public void SerializeStride(){
+        BinarySerializationWriter stream = new(new MemoryStream());
+        ps.Serialize(ref p,ArchiveMode.Serialize,stream);
+    }
     [Benchmark]
     public void SerializeMemPack() => MemoryPackSerializer.Serialize(p);
-    [Benchmark]
-    public void SerializeStride() => ps.Serialize(ref p,ArchiveMode.Serialize,stream);
 
 }

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Bench.Serialization.SeriBench-20230103-123719</title>
+<title>Bench.Serialization.SeriBench-20230103-125256</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,16 +16,17 @@
 BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
 Intel Core i5-8265U CPU 1.60GHz (Whiskey Lake), 1 CPU, 8 logical and 4 physical cores
 .NET SDK=7.0.100
-  [Host]     : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
-  DefaultJob : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  [Host] : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
 </code></pre>
-<pre><code></code></pre>
+<pre><code>Job=MediumRun  Toolchain=InProcessNoEmitToolchain  IterationCount=15  
+LaunchCount=2  WarmupCount=10  
+</code></pre>
 
 <table>
 <thead><tr><th>    Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
 </tr>
-</thead><tbody><tr><td>SerializeMemPack</td><td>176.3 ns</td><td>5.05 ns</td><td>14.48 ns</td>
-</tr><tr><td>SerializeStride</td><td>NA</td><td>NA</td><td>NA</td>
+</thead><tbody><tr><td>SerializeStride</td><td>413.7 ns</td><td>108.31 ns</td><td>162.12 ns</td>
+</tr><tr><td>SerializeMemPack</td><td>153.6 ns</td><td>6.95 ns</td><td>10.19 ns</td>
 </tr></tbody></table>
 </body>
 </html>
