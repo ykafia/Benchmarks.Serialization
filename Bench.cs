@@ -65,7 +65,8 @@ public class AntiVirusFriendlyConfig : ManualConfig
     }
 }
 
-[Config(typeof(AntiVirusFriendlyConfig))]
+[MemoryDiagnoser]
+// [Config(typeof(AntiVirusFriendlyConfig))]
 public class SeriBench
 {
     Person p = new Person("John", "Doe", 35);

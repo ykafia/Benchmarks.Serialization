@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Bench.Serialization.SeriBench-20230103-125256</title>
+<title>Bench.Serialization.SeriBench-20230103-130106</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,20 +13,20 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
-Intel Core i5-8265U CPU 1.60GHz (Whiskey Lake), 1 CPU, 8 logical and 4 physical cores
-.NET SDK=7.0.100
-  [Host] : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.14393.5246/1607/AnniversaryUpdate/Redstone1), VM=VMware
+Intel Xeon CPU E5-2698 v3 2.30GHz, 32 CPU, 32 logical and 32 physical cores
+Frequency=2243495 Hz, Resolution=445.7331 ns, Timer=TSC
+.NET SDK=7.0.101
+  [Host]     : .NET 7.0.1 (7.0.122.56804), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.1 (7.0.122.56804), X64 RyuJIT AVX2
 </code></pre>
-<pre><code>Job=MediumRun  Toolchain=InProcessNoEmitToolchain  IterationCount=15  
-LaunchCount=2  WarmupCount=10  
-</code></pre>
+<pre><code></code></pre>
 
 <table>
-<thead><tr><th>    Method</th><th>Mean</th><th>Error</th><th>StdDev</th>
+<thead><tr><th>    Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>SerializeStride</td><td>413.7 ns</td><td>108.31 ns</td><td>162.12 ns</td>
-</tr><tr><td>SerializeMemPack</td><td>153.6 ns</td><td>6.95 ns</td><td>10.19 ns</td>
+</thead><tbody><tr><td>SerializeStride</td><td>538.9 ns</td><td>10.59 ns</td><td>15.86 ns</td><td>0.0744</td><td>1560 B</td>
+</tr><tr><td>SerializeMemPack</td><td>184.1 ns</td><td>3.61 ns</td><td>4.69 ns</td><td>0.0026</td><td>56 B</td>
 </tr></tbody></table>
 </body>
 </html>
